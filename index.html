@@ -105,7 +105,8 @@
             display: flex;
             justify-content: right;
             pointer-events: none;
-            z-index: 314159
+            z-index: 314159;
+            display: none;
         }
 
         .__framer-badge {
@@ -4732,10 +4733,21 @@
     <script>
         window.addEventListener('load', (e) => {
             document.title = "Abijith | Android Developer";
-            var headTag = document.getElementsByTagName('HEAD')[0];
-            var charsetTag = document.createElement('META');
-            charsetTag.setAttribute("theme-color", "#4285f4");
-            headTag.appendChild(charsetTag);
+            const headTag = document.getElementsByTagName('HEAD')[0];
+            // var charsetTag = document.createElement('META');
+            // charsetTag.setAttribute("theme-color", "#4285f4");
+            // headTag.appendChild(charsetTag);
+            let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+            link.type = 'image/x-icon';
+            link.rel = 'shortcut icon';
+            link.href = 'https://framerusercontent.com/images/SHDyYd24JgeWmIVC2Khm1IvUk4U.png?scale-down-to=42';
+
+            let meta = document.createElement('meta');
+            meta.name = 'theme-color';
+            meta.content = '#0d0d0d';
+            document.head.appendChild(meta);
+            
+            // headTag.append('<link id="dynamic-favicon" rel="shortcut icon" href="https://www.interact-intranet.com/favicon.ico" />');
         })
     </script>
     <!-- Start of bodyEnd -->
